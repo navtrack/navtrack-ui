@@ -1,0 +1,11 @@
+{
+  "name": "navtrack-ui",
+  "workspaces": [
+    "web",
+    "mobile",
+    "shared"
+  ],
+  "dependencies": {
+    "react-native": "0.69.6"
+  }
+}
