@@ -13,11 +13,9 @@ import AssetSettingsAccessPage from "../components/asset/settings/access/AssetSe
 import Paths from "./Paths";
 import SettingsPasswordPage from "../components/settings/SettingsPasswordPage";
 import AssetSettingsDevicePage from "../components/asset/settings/device/AssetSettingsDevicePage";
-import {
-  useSetAssetsFromSignalR,
-  useSetCurrentAssetFromRoute,
-  useSignalR
-} from "@navtrack/navtrack-app-shared";
+import { useSetAssetsFromSignalR } from "@navtrack-ui-shared/hooks/assets/useSetAssetsFromSignalR";
+import { useSetCurrentAssetFromRoute } from "@navtrack-ui-shared/hooks/assets/useSetCurrentAssetFromRoute";
+import { useSignalR } from "@navtrack-ui-shared/hooks/signalr/useSignalR";
 
 export default function RoutesAuthenticated() {
   useSignalR();
