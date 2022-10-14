@@ -9,14 +9,12 @@ import DeviceConfiguration from "../../add/DeviceConfiguration";
 import DevicesTable from "./DevicesTable";
 import useNotification from "../../../ui/shared/notification/useNotification";
 import { object, SchemaOf, string } from "yup";
-import { DeviceTypeModel } from "@navtrack/navtrack-app-shared/dist/api/model/generated";
-import {
-  mapErrors,
-  useAddDeviceMutation,
-  useAssetDevicesQuery,
-  useCurrentAsset,
-  useDevicesTypesQuery
-} from "@navtrack/navtrack-app-shared";
+import { DeviceTypeModel } from "@navtrack-ui-shared/api/model/generated";
+import { useCurrentAsset } from "@navtrack-ui-shared/hooks/assets/useCurrentAsset";
+import { useAddDeviceMutation } from "@navtrack-ui-shared/hooks/mutations/useAddDeviceMutation";
+import { useAssetDevicesQuery } from "@navtrack-ui-shared/hooks/queries/useAssetDevicesQuery";
+import { useDevicesTypesQuery } from "@navtrack-ui-shared/hooks/queries/useDevicesTypesQuery";
+import { mapErrors } from "@navtrack-ui-shared/utils/formik";
 
 type ChangeDeviceFormValues = {
   serialNumber: string;

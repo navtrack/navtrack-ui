@@ -1,10 +1,10 @@
 import styled from "@mui/styled-engine";
-import { settingsSelector } from "@navtrack/navtrack-app-shared";
 import { ReactNode } from "react";
 import { MapContainer } from "react-leaflet";
 import { useRecoilValue } from "recoil";
 import { LatLng } from "./types";
 import VectorTileLayer from "react-leaflet-vector-tile-layer";
+import { settingsSelector } from "@navtrack-ui-shared/state/app.settings";
 
 interface IMap {
   center: LatLng;

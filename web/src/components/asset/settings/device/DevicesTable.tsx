@@ -1,9 +1,7 @@
 import { faTrashAlt } from "@fortawesome/free-regular-svg-icons";
-import {
-  getGetAssetsAssetIdDevicesQueryKey,
-  useDeleteDeviceMutation
-} from "@navtrack/navtrack-app-shared";
-import { DeviceModel } from "@navtrack/navtrack-app-shared/dist/api/model/generated";
+import { getGetAssetsAssetIdDevicesQueryKey } from "@navtrack-ui-shared/api/index-generated";
+import { DeviceModel } from "@navtrack-ui-shared/api/model/generated";
+import { useDeleteDeviceMutation } from "@navtrack-ui-shared/hooks/mutations/useDeleteDeviceMutation";
 import { FormattedMessage, useIntl } from "react-intl";
 import { useQueryClient } from "react-query";
 import IconButton from "../../../ui/shared/button/IconButton";

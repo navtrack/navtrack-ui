@@ -9,7 +9,7 @@ import AdminLayoutNavBarItem from "./AdminLayoutNavBarItem";
 import Button from "../../shared/button/Button";
 import { useHistory } from "react-router";
 import { FormattedMessage } from "react-intl";
-import { useCurrentAsset } from "@navtrack/navtrack-app-shared";
+import { useCurrentAsset } from "@navtrack-ui-shared/hooks/assets/useCurrentAsset";
 
 export default function AdminLayoutNavBar() {
   const currentAsset = useCurrentAsset();

@@ -1,6 +1,6 @@
 import { faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
 import { RadioGroup } from "@headlessui/react";
-import { nameOf } from "@navtrack/navtrack-app-shared";
+import { nameOf } from "@navtrack-ui-shared/utils/typescript";
 import classNames from "classnames";
 import { Form, Formik } from "formik";
 import { FormattedMessage } from "react-intl";
