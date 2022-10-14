@@ -1,4 +1,4 @@
-import { usePostAssetsAssetIdDevices } from "../../api";
+import { usePostAssetsAssetIdDevices } from "../../api/index-generated";
 
 export const useAddDeviceMutation = () => {
   const mutation = usePostAssetsAssetIdDevices();

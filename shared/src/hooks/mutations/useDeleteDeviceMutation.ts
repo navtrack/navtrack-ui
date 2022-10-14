@@ -1,4 +1,4 @@
-import { useDeleteAssetsAssetIdDevicesDeviceId } from "../../api";
+import { useDeleteAssetsAssetIdDevicesDeviceId } from "../../api/index-generated";
 
 export const useDeleteDeviceMutation = () => {
   const mutation = useDeleteAssetsAssetIdDevicesDeviceId();

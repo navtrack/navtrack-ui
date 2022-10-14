@@ -1,4 +1,4 @@
-import { usePatchAssetsAssetId } from "../../api";
+import { usePatchAssetsAssetId } from "../../api/index-generated";
 
 export const useRenameAssetMutation = () => {
   const mutation = usePatchAssetsAssetId();

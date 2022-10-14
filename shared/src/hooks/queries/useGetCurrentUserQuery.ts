@@ -1,4 +1,4 @@
-import { useGetUser } from "../../api";
+import { useGetUser } from "../../api/index-generated";
 
 export const useGetCurrentUserQuery = () => {
   const query = useGetUser({

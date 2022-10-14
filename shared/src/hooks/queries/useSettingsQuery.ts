@@ -1,4 +1,4 @@
-import { useGetSettings } from "../../api";
+import { useGetSettings } from "../../api/index-generated";
 
 export const useSettingsQuery = () => {
   const query = useGetSettings({

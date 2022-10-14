@@ -1,6 +1,5 @@
 import { atom, selector } from "recoil";
 import { AssetModel } from "../api/model/generated";
-import { getLocalStorageEffect } from "./util";
 
 export const assetsAtom = atom<AssetModel[]>({
   key: "Assets",
@@ -14,8 +13,7 @@ export const scrollToAssetAtom = atom<string | undefined>({
 
 export const currentAssetIdAtom = atom<string | undefined>({
   key: "Assets:CurrentAsset:Id",
-  default: undefined,
-  effects: [getLocalStorageEffect("CurrentAsset")]
+  default: undefined
 });
 
 export const currentAssetSelector = selector({

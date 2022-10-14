@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { settingsAtom } from "../../state/app.settings";
 import { useSettingsQuery } from "../queries/useSettingsQuery";
@@ -6,14 +6,14 @@ import { useSettingsQuery } from "../queries/useSettingsQuery";
 export const useSettings = () => {
   const settings = useSettingsQuery();
   const [state, setState] = useRecoilState(settingsAtom);
-  const [updated, setUpdated] = useState(false);
 
   useEffect(() => {
-    if (settings.data && !updated) {
-      setState({ settings: settings.data, initialized: true });
-      setUpdated(true);
+    if (!state.initialized) {
+      if (settings.data) {
+        setState({ settings: settings.data, initialized: true });
+      }
     }
-  }, [setState, settings.data, state.initialized, updated]);
+  }, [setState, settings.data, state.initialized]);
 
   return state.initialized;
 };

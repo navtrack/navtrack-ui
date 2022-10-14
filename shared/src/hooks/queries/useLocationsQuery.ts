@@ -1,4 +1,4 @@
-import { useGetAssetsAssetIdLocations } from "../../api";
+import { useGetAssetsAssetIdLocations } from "../../api/index-generated";
 
 export type IUseLocationsQuery = {
   assetId?: string;

@@ -1,5 +1,4 @@
 import { atom } from "recoil";
-import { getLocalStorageEffect } from "./util";
 
 export type Token = {
   accessToken: string;
@@ -20,6 +19,5 @@ export const authenticationAtom = atom<AuthenticationState>({
     isAuthenticated: false,
     initialized: false,
     recheckToken: false
-  },
-  effects: [getLocalStorageEffect("Authentication:Token")]
+  }
 });

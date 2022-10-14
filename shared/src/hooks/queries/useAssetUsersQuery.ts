@@ -1,4 +1,4 @@
-import { useGetAssetsAssetIdUsers } from "../../api";
+import { useGetAssetsAssetIdUsers } from "../../api/index-generated";
 
 interface IUseAssetUsersQuery {
   assetId: string;

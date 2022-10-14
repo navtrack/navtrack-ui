@@ -1,5 +1,4 @@
 import { atom, selector } from "recoil";
-import { getLocalStorageEffect } from "./util";
 
 export type SettingKey =
   | "AppleAuthentication.ClientId"
@@ -21,8 +20,7 @@ export const settingsAtom = atom<SettingsState>({
   default: {
     settings: {},
     initialized: false
-  },
-  effects: [getLocalStorageEffect("App:Settings")]
+  }
 });
 
 export const settingsSelector = selector({

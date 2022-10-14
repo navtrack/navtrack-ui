@@ -2,6 +2,7 @@ import { add, isAfter, parseISO, sub } from "date-fns";
 import { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { authenticationAtom } from "../../state/app.authentication";
+import { localStorageAtom } from "../../state/app.localStorage";
 import { log, LogLevel } from "../../utils/log";
 import { useGetTokenMutation } from "../mutations/useGetTokenMutation";
 
@@ -12,6 +13,8 @@ interface IUseAuthentication {
 export const useAuthentication = (props: IUseAuthentication) => {
   const [authentication, setAuthentication] =
     useRecoilState(authenticationAtom);
+  const [localStorageState, setLocalStorageState] =
+    useRecoilState(localStorageAtom);
   const [reinitializeCheckInterval, setReinitializeCheckInterval] =
     useState(false);
   const [checkTokenInterval, setCheckTokenInterval] = useState<
@@ -143,4 +146,47 @@ export const useAuthentication = (props: IUseAuthentication) => {
       checkToken();
     }
   }, [authentication.recheckToken, checkToken]);
+
+  // Get the token from local storage
+  useEffect(() => {
+    if (
+      !authentication.initialized &&
+      localStorageState.initialized &&
+      localStorageState.data?.token !== undefined
+    ) {
+      setAuthentication((x) => ({
+        ...x,
+        token: localStorageState.data?.token,
+        recheckToken: true
+      }));
+    } else {
+      setAuthentication((x) => ({
+        ...x,
+        initialized: true
+      }));
+    }
+  }, [
+    authentication.initialized,
+    localStorageState.data?.token,
+    localStorageState.initialized,
+    setAuthentication
+  ]);
+
+  // Update the local storage when the token changes
+  useEffect(() => {
+    if (authentication.initialized && localStorageState.initialized) {
+      setLocalStorageState((x) => ({
+        ...x,
+        data: {
+          ...x.data,
+          token: authentication.token
+        }
+      }));
+    }
+  }, [
+    authentication.initialized,
+    authentication.token,
+    localStorageState.initialized,
+    setLocalStorageState
+  ]);
 };

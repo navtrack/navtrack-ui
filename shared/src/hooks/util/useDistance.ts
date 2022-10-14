@@ -9,7 +9,7 @@ export const useDistance = () => {
     (speed?: number | null) =>
       speed !== undefined && speed !== null
         ? `${Math.round(speed)} ${units.speed}`
-        : "-",
+        : "",
     [units.speed]
   );
 
@@ -31,7 +31,7 @@ export const useDistance = () => {
         return `${distance} ${units.length}`;
       }
 
-      return "-";
+      return "";
     },
     [units.length, units.lengthK, units.unitsType]
   );
@@ -40,13 +40,13 @@ export const useDistance = () => {
     (altitude?: number | null) =>
       altitude !== undefined && altitude !== null
         ? `${altitude} ${units.length}`
-        : "-",
+        : "",
     [units.length]
   );
 
   const showHeading = useCallback(
     (heading?: number | null) =>
-      heading !== undefined && heading !== null ? `${heading}°` : "-",
+      heading !== undefined && heading !== null ? `${heading}°` : "",
     []
   );
 

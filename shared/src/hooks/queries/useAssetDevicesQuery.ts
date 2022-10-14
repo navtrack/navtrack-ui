@@ -1,4 +1,4 @@
-import { useGetAssetsAssetIdDevices } from "../../api";
+import { useGetAssetsAssetIdDevices } from "../../api/index-generated";
 
 export const useAssetDevicesQuery = (assetId?: string) => {
   const query = useGetAssetsAssetIdDevices(`${assetId}`, {
