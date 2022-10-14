@@ -16,7 +16,7 @@
     "react-native": "0.69.6",
     "react-native-web": "~0.18.7",
     "recoil": "^0.7.6",
-    "shared": "^1.0.0"
+    "navtrack-ui-shared": "^0.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
