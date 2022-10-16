@@ -1,5 +1,5 @@
 {
-  "name": "navtrack",
+  "name": "@navtrack/ui-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,7 +18,6 @@
     "@microsoft/signalr": "^6.0.1",
     "@mui/lab": "^5.0.0-alpha.61",
     "@mui/material": "^5.2.5",
-    "@navtrack/navtrack-app-shared": "^1.1.2",
     "@popperjs/core": "^2.11.0",
     "@sentry/react": "^7.15.0",
     "@sentry/tracing": "^7.15.0",

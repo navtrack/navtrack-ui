@@ -1,4 +1,4 @@
-import { nameOf } from "@navtrack/navtrack-app-shared";
+import { nameOf } from "@navtrack/ui-shared/utils/typescript";
 import { Form, Formik } from "formik";
 import { FormattedMessage } from "react-intl";
 import Button from "../ui/shared/button/Button";

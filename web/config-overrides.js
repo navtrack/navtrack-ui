@@ -22,7 +22,7 @@ function myOverrides(config, env) {
   });
 
   // Mirror TypeScript @shared path in webpack
-  config.resolve.alias["@navtrack-ui-shared"] = sharedRepoPath;
+  config.resolve.alias["@navtrack/ui-shared"] = sharedRepoPath;
 
   return config;
 }

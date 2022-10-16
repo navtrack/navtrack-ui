@@ -8,7 +8,8 @@ import TextInputRightAddon from "../../../../ui/shared/text-input/TextInputRight
 import FilterModal from "../FilterModal";
 import { DEFAULT_MAX_SPEED, SpeedFilterFormValues } from "../types";
 import useSpeedFilter from "./useSpeedFilter";
-import { nameOf, useCurrentUnits } from "@navtrack/navtrack-app-shared";
+import { useCurrentUnits } from "@navtrack/ui-shared/hooks/util/useCurrentUnits";
+import { nameOf } from "@navtrack/ui-shared/utils/typescript";
 
 interface ISpeedFilterModal {
   average?: boolean;

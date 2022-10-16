@@ -2,11 +2,11 @@ import { Popover } from "@headlessui/react";
 import { LocalizationProvider, StaticDatePicker } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import { styled, TextField, TextFieldProps } from "@mui/material";
+import { c } from "@navtrack/ui-shared/utils/tailwind";
 import classNames from "classnames";
 import { format } from "date-fns";
 import { useState } from "react";
 import { usePopper } from "react-popper";
-import { c } from "@navtrack/navtrack-app-shared";
 import TextInput from "../text-input/TextInput";
 
 interface IDatePicker {

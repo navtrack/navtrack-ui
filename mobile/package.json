@@ -1,5 +1,5 @@
 {
-  "name": "navtrack-ui-mobile",
+  "name": "@navtrack/ui-mobile",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

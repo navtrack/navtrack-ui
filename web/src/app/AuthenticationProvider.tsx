@@ -1,7 +1,5 @@
-import {
-  useAuthentication,
-  useAxiosAuthorization
-} from "@navtrack/navtrack-app-shared";
+import { useAuthentication } from "@navtrack/ui-shared/hooks/authentication/useAuthentication";
+import { useAxiosAuthorization } from "@navtrack/ui-shared/hooks/axios/useAxiosAuthorization";
 import { AUTHENTICATION } from "../constants";
 
 const AuthenticationProvider: React.FC = (props) => {

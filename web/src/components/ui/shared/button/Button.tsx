@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import classNames from "classnames";
 import LoadingIndicator from "../loading-indicator/LoadingIndicator";
-import { c } from "@navtrack/navtrack-app-shared";
+import { c } from "@navtrack/ui-shared/utils/tailwind";
 
 type Props = {
   children: ReactNode;

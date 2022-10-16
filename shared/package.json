@@ -1,5 +1,7 @@
 {
-  "name": "navtrack-ui-shared",
+  "name": "@navtrack/ui-shared",
   "version": "0.1.0",
-  "dependencies": {}
+  "dependencies": {
+    "query-string": "^7.1.1"
+  }
 }

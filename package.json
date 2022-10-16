@@ -1,7 +1,8 @@
 {
-  "name": "navtrack-ui",
+  "name": "@navtrack/ui",
   "workspaces": [
-    "web"
+    "web",
+    "shared"
   ],
   "dependencies": {}
 }

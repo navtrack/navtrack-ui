@@ -15,8 +15,8 @@ import LoadingIndicator from "../ui/shared/loading-indicator/LoadingIndicator";
 import Paths from "../../app/Paths";
 import ExternalLogin from "./external-login/ExternalLogin";
 import Alert from "../ui/shared/alert/Alert";
-import { useLogin } from "@navtrack/navtrack-app-shared";
 import { AUTHENTICATION } from "../../constants";
+import { useLogin } from "@navtrack/ui-shared/hooks/authentication/useLogin";
 
 export default function LoginPage() {
   const validationSchema = useLoginFormValidationSchema();

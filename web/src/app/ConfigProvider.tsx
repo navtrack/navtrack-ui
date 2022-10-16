@@ -1,4 +1,5 @@
-import { useAxiosBaseUrls, useSetConfig } from "@navtrack/navtrack-app-shared";
+import { useAxiosBaseUrls } from "@navtrack/ui-shared/hooks/axios/useAxiosBaseUrls";
+import { useSetConfig } from "@navtrack/ui-shared/hooks/config/useSetConfig";
 import useLocalStorage from "../hooks/app/useLocalStorage";
 
 const ConfigProvider: React.FC = (props) => {

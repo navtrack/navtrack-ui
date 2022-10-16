@@ -1,4 +1,4 @@
-import { useGetTokenMutation } from "@navtrack/navtrack-app-shared";
+import { useGetTokenMutation } from "@navtrack/ui-shared/hooks/mutations/useGetTokenMutation";
 import { useCallback } from "react";
 import { useHistory } from "react-router";
 import { ForgotPasswordFormValues } from "./ForgotPasswordFormValues";

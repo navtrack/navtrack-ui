@@ -13,8 +13,8 @@ import Icon from "../ui/shared/icon/Icon";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import ExternalLogin from "../login/external-login/ExternalLogin";
-import { useLogin } from "@navtrack/navtrack-app-shared";
 import { AUTHENTICATION } from "../../constants";
+import { useLogin } from "@navtrack/ui-shared/hooks/authentication/useLogin";
 
 export default function RegisterPage() {
   const validationSchema = useRegisterFormValidationSchema();
