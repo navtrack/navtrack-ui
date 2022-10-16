@@ -4,5 +4,10 @@
     "web",
     "shared"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "typescript": "^4.8.4"
+  },
+  "overrides": {
+    "react": "18.2.0"
+  }
 }
