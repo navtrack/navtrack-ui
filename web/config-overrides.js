@@ -1,8 +1,9 @@
 const path = require("path");
+const { override, addPostcssPlugins } = require("customize-cra");
 
 const sharedRepoPath = path.resolve("../shared/src");
 
-module.exports = function override(config, env) {
+function myOverrides(config, env) {
   // Remove ModuleScopePlugin
   config.resolve.plugins = config.resolve.plugins.filter((plugin) => {
     return plugin.constructor.name !== "ModuleScopePlugin";
@@ -24,4 +25,9 @@ module.exports = function override(config, env) {
   config.resolve.alias["@navtrack-ui-shared"] = sharedRepoPath;
 
   return config;
-};
+}
+
+module.exports = override(
+  myOverrides,
+  addPostcssPlugins([require("tailwindcss"), require("autoprefixer")])
+);
