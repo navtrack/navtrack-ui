@@ -3,7 +3,7 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@shared/*": ["../shared/src/*"]
+      "@navtrack/ui-shared/*": ["../shared/src/*"]
     }
   },
   "include": [".", "../shared/src"]
