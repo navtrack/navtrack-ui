@@ -4,7 +4,7 @@ import { useRecoilValue } from "recoil";
 import RoutesAuthenticated from "./RoutesAuthenticated";
 import RoutesUnauthenticated from "./RoutesUnauthenticated";
 
-export default function BrowserRouterProvider() {
+export const BrowserRouterProvider = () => {
   const appContext = useRecoilValue(appContextSelector);
 
   return (
@@ -20,4 +20,4 @@ export default function BrowserRouterProvider() {
       )}
     </BrowserRouter>
   );
-}
+};

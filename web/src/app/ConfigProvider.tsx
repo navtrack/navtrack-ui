@@ -1,8 +1,9 @@
 import { useAxiosBaseUrls } from "@navtrack/ui-shared/hooks/axios/useAxiosBaseUrls";
 import { useSetConfig } from "@navtrack/ui-shared/hooks/config/useSetConfig";
+import { ReactNode } from "react";
 import useLocalStorage from "../hooks/app/useLocalStorage";
 
-const ConfigProvider: React.FC = (props) => {
+const ConfigProvider = (props: { children: ReactNode }) => {
   const configInitialized = useSetConfig({
     apiUrl: `${process.env.REACT_APP_API_URL}`
   });

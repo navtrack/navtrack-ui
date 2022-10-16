@@ -1,9 +1,8 @@
+import { ReactNode } from "react";
 import useSentry from "../hooks/sentry/useSentry";
 
-const SentryProvider: React.FC = (props) => {
+export const SentryProvider = (props: { children: ReactNode }) => {
   useSentry();
 
   return <>{props.children}</>;
 };
-
-export default SentryProvider;
