@@ -4,8 +4,7 @@ import {
   faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import { Popover, Transition } from "@headlessui/react";
-import { useHTMLElementSize } from "@navtrack-ui-shared/hooks/util/useHTMLElementSize";
-import { c } from "@navtrack-ui-shared/utils/tailwind";
+import { c, useHTMLElementSize } from "@navtrack/navtrack-app-shared";
 import classNames from "classnames";
 import { FocusEventHandler, Fragment, useMemo, useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
@@ -33,6 +32,7 @@ export default function SelectInput(props: ISelectInput) {
   const [selectedItem, setSelectedItem] = useState(
     props.items.find((item) => item.id === props.value)
   );
+
   const [searchText, setSearchText] = useState(selectedItem?.label);
   const inputEl = useRef(null);
   const inputSize = useHTMLElementSize(inputEl);

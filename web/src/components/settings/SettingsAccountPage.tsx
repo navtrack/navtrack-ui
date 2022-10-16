@@ -7,11 +7,13 @@ import { FormattedMessage, useIntl } from "react-intl";
 import FormikSelect from "../ui/shared/select/FormikSelect";
 import { ISelectOption } from "../ui/shared/select/types";
 import useNotification from "../ui/shared/notification/useNotification";
-import { useCurrentUser } from "@navtrack-ui-shared/hooks/app/useCurrentUser";
-import { useUpdateUserMutation } from "@navtrack-ui-shared/hooks/mutations/useUpdateUserMutation";
-import { mapErrors } from "@navtrack-ui-shared/utils/formik";
-import { nameOf } from "@navtrack-ui-shared/utils/typescript";
-import { UnitsType } from "@navtrack-ui-shared/api/model/custom/UnitsType";
+import {
+  mapErrors,
+  nameOf,
+  UnitsType,
+  useCurrentUser,
+  useUpdateUserMutation
+} from "@navtrack/navtrack-app-shared";
 
 type AccountSettingsFormValues = {
   email?: string;

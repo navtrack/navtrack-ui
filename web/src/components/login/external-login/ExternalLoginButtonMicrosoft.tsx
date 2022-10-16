@@ -4,8 +4,8 @@ import { FormattedMessage } from "react-intl";
 import { useMsal } from "@azure/msal-react";
 import { useCallback } from "react";
 import { useRecoilValue } from "recoil";
+import { settingsSelector } from "@navtrack/navtrack-app-shared";
 import { ICustomExternalLoginButton } from "./types";
-import { settingsSelector } from "@navtrack-ui-shared/state/app.settings";
 
 export default function ExternalLoginButtonMicrosoft(
   props: ICustomExternalLoginButton

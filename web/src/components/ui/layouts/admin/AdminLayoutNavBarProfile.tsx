@@ -10,8 +10,7 @@ import classNames from "classnames";
 import { FormattedMessage } from "react-intl";
 import { useHistory } from "react-router";
 import IconWithText from "../../shared/icon/IconWithText";
-import { useCurrentUser } from "@navtrack-ui-shared/hooks/app/useCurrentUser";
-import { useLogout } from "@navtrack-ui-shared/hooks/authentication/useLogout";
+import { useCurrentUser, useLogout } from "@navtrack/navtrack-app-shared";
 
 export interface IAdminLayoutNavBarProfile {}
 

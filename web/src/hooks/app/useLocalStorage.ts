@@ -1,9 +1,9 @@
-import {
-  localStorageAtom,
-  LocalStorageData
-} from "@navtrack-ui-shared/state/app.localStorage";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
+import {
+  LocalStorageData,
+  localStorageAtom
+} from "@navtrack/navtrack-app-shared";
 
 export const CONTEXT_KEY = "navtrack";
 

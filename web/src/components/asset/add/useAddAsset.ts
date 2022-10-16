@@ -6,10 +6,12 @@ import { FormikHelpers } from "formik";
 import { useHistory } from "react-router";
 import useScrollToAsset from "../../ui/layouts/admin/useScrollToAsset";
 import useNotification from "../../ui/shared/notification/useNotification";
-import { useAddAssetMutation } from "@navtrack-ui-shared/hooks/mutations/useAddAssetMutation";
-import { useDevicesTypesQuery } from "@navtrack-ui-shared/hooks/queries/useDevicesTypesQuery";
-import { useGetAssetsSignalRQuery } from "@navtrack-ui-shared/hooks/queries/useGetAssetsSignalRQuery";
-import { mapErrors } from "@navtrack-ui-shared/utils/formik";
+import {
+  mapErrors,
+  useAddAssetMutation,
+  useDevicesTypesQuery,
+  useGetAssetsSignalRQuery
+} from "@navtrack/navtrack-app-shared";
 
 export default function useAddAsset() {
   const { deviceTypes } = useDevicesTypesQuery();

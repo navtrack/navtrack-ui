@@ -1,10 +1,5 @@
 {
   "name": "navtrack-ui-shared",
   "version": "0.1.0",
-  "dependencies": {
-    "recoil": "^0.7.6",
-    "formik": "^2.2.9",
-    "typescript": "^4.8.4",
-    "query-string": "^7.1.1"
-  }
+  "dependencies": {}
 }

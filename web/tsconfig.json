@@ -18,13 +18,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@navtrack-ui-shared/*": ["../shared/src/*"]
-    }
+    "jsx": "react-jsx"
   },
   "include": [
-    "src",
-    "../shared/src"
+    "src"
   ]
 }

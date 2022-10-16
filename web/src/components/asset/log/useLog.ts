@@ -1,9 +1,11 @@
-import { useCurrentAsset } from "@navtrack-ui-shared/hooks/assets/useCurrentAsset";
-import { useLocationsQuery } from "@navtrack-ui-shared/hooks/queries/useLocationsQuery";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { locationFiltersSelector } from "../shared/location-filter/state";
 import { useLocationFilterKey } from "../shared/location-filter/useLocationFilterKey";
+import {
+  useCurrentAsset,
+  useLocationsQuery
+} from "@navtrack/navtrack-app-shared";
 
 export default function useLog() {
   const currentAsset = useCurrentAsset();

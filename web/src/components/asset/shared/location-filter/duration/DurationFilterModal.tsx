@@ -8,8 +8,7 @@ import FilterModal from "../FilterModal";
 import { DurationFilterFormValues } from "../types";
 import useDurationFilter from "./useDurationFilter";
 import { useDurationFilterFormValuesValidation } from "./useDurationFilterFormValuesValidation";
-import { useCurrentUnits } from "@navtrack-ui-shared/hooks/util/useCurrentUnits";
-import { nameOf } from "@navtrack-ui-shared/utils/typescript";
+import { nameOf, useCurrentUnits } from "@navtrack/navtrack-app-shared";
 
 interface IDurationFilterModal {
   filterKey: string;

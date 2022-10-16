@@ -1,4 +1,4 @@
-import { c } from "@navtrack-ui-shared/utils/tailwind";
+import { c } from "@navtrack/navtrack-app-shared";
 import classNames from "classnames";
 import { ReactNode } from "react";
 

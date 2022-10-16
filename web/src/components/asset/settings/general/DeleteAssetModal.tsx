@@ -5,8 +5,7 @@ import { DeleteAssetFormValues } from "./types";
 import useDeleteAsset from "./useDeleteAsset";
 import Modal from "../../../ui/shared/modal/Modal";
 import DeleteModalContainer from "../../../ui/shared/modal/DeleteModalContainer";
-import { useCurrentAsset } from "@navtrack-ui-shared/hooks/assets/useCurrentAsset";
-import { nameOf } from "@navtrack-ui-shared/utils/typescript";
+import { nameOf, useCurrentAsset } from "@navtrack/navtrack-app-shared";
 
 interface IDeleteAssetModal {
   show: boolean;

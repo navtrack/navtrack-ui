@@ -1,5 +1,5 @@
 import { faTachometerAlt } from "@fortawesome/free-solid-svg-icons";
-import { useCurrentUnits } from "@navtrack-ui-shared/hooks/util/useCurrentUnits";
+import { useCurrentUnits } from "@navtrack/navtrack-app-shared";
 import { useMemo } from "react";
 import { useRecoilState, useResetRecoilState } from "recoil";
 import Badge from "../../../../ui/shared/badge/Badge";

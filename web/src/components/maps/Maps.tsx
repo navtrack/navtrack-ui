@@ -2,8 +2,10 @@ import Map from "../ui/shared/map/Map";
 import MapPin from "../ui/shared/map/MapPin";
 import { useEffect, useState } from "react";
 import { DEFAULT_MAP_CENTER } from "../../constants";
-import { LocationPinUpdateEvent } from "@navtrack-ui-shared/hooks/webView/types";
-import { useWebViewEventHandler } from "@navtrack-ui-shared/hooks/webView/useWebViewEventHandler";
+import {
+  LocationPinUpdateEvent,
+  useWebViewEventHandler
+} from "@navtrack/navtrack-app-shared";
 
 export function Maps() {
   const [event, setEvent] = useState<LocationPinUpdateEvent>();

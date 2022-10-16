@@ -4,8 +4,10 @@ import { FormattedMessage } from "react-intl";
 import Button from "../../../ui/shared/button/Button";
 import { useState } from "react";
 import AddUserToAssetModal from "./AddUserToAssetModal";
-import { useCurrentAsset } from "@navtrack-ui-shared/hooks/assets/useCurrentAsset";
-import { useAssetUsersQuery } from "@navtrack-ui-shared/hooks/queries/useAssetUsersQuery";
+import {
+  useAssetUsersQuery,
+  useCurrentAsset
+} from "@navtrack/navtrack-app-shared";
 
 export default function AssetSettingsAccessPage() {
   const currentAsset = useCurrentAsset();

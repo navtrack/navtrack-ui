@@ -4,9 +4,11 @@ import { useHistory } from "react-router";
 import { object, SchemaOf, string } from "yup";
 import { DeleteAssetFormValues } from "./types";
 import useNotification from "../../../ui/shared/notification/useNotification";
-import { useCurrentAsset } from "@navtrack-ui-shared/hooks/assets/useCurrentAsset";
-import { useDeleteAssetMutation } from "@navtrack-ui-shared/hooks/mutations/useDeleteAssetMutation";
-import { useGetAssetsSignalRQuery } from "@navtrack-ui-shared/hooks/queries/useGetAssetsSignalRQuery";
+import {
+  useCurrentAsset,
+  useDeleteAssetMutation,
+  useGetAssetsSignalRQuery
+} from "@navtrack/navtrack-app-shared";
 
 export default function useDeleteAsset() {
   const currentAsset = useCurrentAsset();
