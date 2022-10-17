@@ -8,7 +8,7 @@ module.exports = function (api) {
         "module-resolver",
         {
           alias: {
-            "@shared": "../shared/src"
+            "@navtrack/ui-shared": "../shared/src"
           }
         }
       ]
