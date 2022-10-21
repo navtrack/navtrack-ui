@@ -1,3 +1,4 @@
+import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { IntlProvider } from "react-intl";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -21,6 +22,7 @@ export default function App() {
               <AuthenticationProvider>
                 <IntlProvider locale="en" messages={translations["en"]}>
                   <Navigation />
+                  <StatusBar style="light" />
                 </IntlProvider>
               </AuthenticationProvider>
             </SettingsProvider>
