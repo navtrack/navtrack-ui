@@ -16,7 +16,7 @@ export function Maps() {
   });
 
   useEffect(() => {
-    if (typeof window !== undefined && "ReactNativeWebView" in window) {
+    if (typeof window !== "undefined" && "ReactNativeWebView" in window) {
       const reactNativeWebView = (window as any).ReactNativeWebView;
 
       reactNativeWebView.postMessage("loaded");

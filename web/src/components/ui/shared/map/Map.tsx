@@ -1,10 +1,7 @@
 import styled from "@mui/styled-engine";
 import { ReactNode } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
-import { useRecoilValue } from "recoil";
 import { LatLng } from "./types";
-import VectorTileLayer from "react-leaflet-vector-tile-layer";
-import { settingsSelector } from "@navtrack/ui-shared/state/app.settings";
 
 interface IMap {
   center: LatLng;
@@ -30,8 +27,6 @@ const StyledDiv = styled("div")`
 `;
 
 export default function Map(props: IMap) {
-  const settings = useRecoilValue(settingsSelector);
-
   return (
     <StyledDiv className="relative flex flex-grow">
       {props.center !== undefined && (
