@@ -99,6 +99,10 @@ export const AuthenticatedNavigator = () => {
           name="Settings"
           component={SettingsScreen}
           options={{
+            headerStyle: {
+              backgroundColor: TailwindColors.gray[900],
+              shadowColor: "transparent"
+            },
             tabBarIcon: ({ focused }) => (
               <NtIcon
                 size={20}
@@ -108,7 +112,10 @@ export const AuthenticatedNavigator = () => {
                 }
               />
             ),
-            title: "Settings"
+            headerTitleStyle: {
+              color: TailwindColors.white
+            },
+            headerTitle: "Settings"
           }}
         />
       </BottomTabNavigator.Navigator>
