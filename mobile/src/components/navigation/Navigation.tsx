@@ -1,4 +1,4 @@
-import { authenticationAtom } from "@navtrack/ui-shared/state/app.authentication";
+import { authenticationAtom } from "@navtrack/ui-shared/state/authentication";
 import { NavigationContainer } from "@react-navigation/native";
 import React, { Suspense } from "react";
 import { useRecoilValue } from "recoil";

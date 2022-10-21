@@ -1,7 +1,7 @@
 import { useCurrentAsset } from "@navtrack/ui-shared/hooks/assets/useCurrentAsset";
 import { FormattedMessage } from "react-intl";
 import Card from "../../ui/shared/card/Card";
-import Map from "../../ui/shared/map/Map";
+import { Map } from "../../ui/shared/map/Map";
 import LocationBar from "../shared/location-bar/LocationBar";
 import LiveTrackingMapPin from "./LiveTrackingMapPin";
 

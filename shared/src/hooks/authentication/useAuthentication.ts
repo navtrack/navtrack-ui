@@ -1,7 +1,7 @@
 import { add, isAfter, parseISO, sub } from "date-fns";
 import { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { authenticationAtom } from "../../state/app.authentication";
+import { authenticationAtom } from "../../state/authentication";
 import { localStorageAtom } from "../../state/app.localStorage";
 import { log, LogLevel } from "../../utils/log";
 import { useGetTokenMutation } from "../mutations/useGetTokenMutation";

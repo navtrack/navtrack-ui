@@ -5,7 +5,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import LocationFilter from "../shared/location-filter/LocationFilter";
 import Card from "../../ui/shared/card/Card";
 import Icon from "../../ui/shared/icon/Icon";
-import Map from "../../ui/shared/map/Map";
+import { Map } from "../../ui/shared/map/Map";
 import MapPin from "../../ui/shared/map/MapPin";
 import MapTrip from "../../ui/shared/map/MapTrip";
 import Slider from "../../ui/shared/slider/Slider";

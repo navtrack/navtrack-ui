@@ -2,27 +2,27 @@ import { useCallback, useState } from "react";
 import { useGetTokenMutation } from "../mutations/useGetTokenMutation";
 import { useSetRecoilState } from "recoil";
 import { add } from "date-fns";
-import { authenticationAtom } from "../../state/app.authentication";
+import { authenticationAtom } from "../../state/authentication";
 
 export interface ILoginValues {
   username: string;
   password: string;
 }
 
-interface IUseLogin {
+interface UseLoginProps {
   clientId: string;
   onSuccess?: () => void;
 }
 
-export const useLogin = (props: IUseLogin) => {
+export const useLogin = (props: UseLoginProps) => {
   const setState = useSetRecoilState(authenticationAtom);
   const [internalLoginError, setInternalLoginError] = useState(false);
   const [externalLoginError, setExternalLoginError] = useState(false);
 
   const getTokenMutation = useGetTokenMutation({
     onSuccess: (data) => {
-      setState((current) => ({
-        ...current,
+      setState(() => ({
+        recheckToken: false,
         initialized: true,
         isAuthenticated: true,
         token: {
@@ -36,7 +36,7 @@ export const useLogin = (props: IUseLogin) => {
 
       props.onSuccess?.();
     },
-    onError: (e, data) => {
+    onError: (_, data) => {
       if (data.grant_type === "password") {
         setInternalLoginError(true);
       } else {

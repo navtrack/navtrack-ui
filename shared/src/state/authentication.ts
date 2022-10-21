@@ -14,7 +14,7 @@ export type AuthenticationState = {
 };
 
 export const authenticationAtom = atom<AuthenticationState>({
-  key: "App:Authentication",
+  key: "Navtrack:Authentication",
   default: {
     isAuthenticated: false,
     initialized: false,

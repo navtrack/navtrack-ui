@@ -1,5 +1,5 @@
 import { selector } from "recoil";
-import { authenticationAtom } from "./app.authentication";
+import { authenticationAtom } from "./authentication";
 import { axiosAtom } from "./app.axios";
 import { configAtom } from "./app.config";
 import { localStorageAtom } from "./app.localStorage";

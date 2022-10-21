@@ -1,5 +1,5 @@
 import LocationFilter from "../shared/location-filter/LocationFilter";
-import Map from "../../ui/shared/map/Map";
+import { Map } from "../../ui/shared/map/Map";
 import MapPin from "../../ui/shared/map/MapPin";
 import LogTable from "./LogTable";
 import useLog from "./useLog";

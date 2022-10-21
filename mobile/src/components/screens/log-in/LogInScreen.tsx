@@ -1,12 +1,10 @@
 import { useLogin } from "@navtrack/ui-shared/hooks/authentication/useLogin";
-import { authenticationAtom } from "@navtrack/ui-shared/state/app.authentication";
 import { useNavigation } from "@react-navigation/native";
 import * as React from "react";
 import { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useSetRecoilState } from "recoil";
 import { NavtrackLogo } from "../../shared/NavtrackLogo";
 import { NtTextButton } from "../../shared/NtTextButton";
 import { NtTextInput } from "../../shared/NtTextInput";
@@ -21,7 +19,6 @@ export const LogInScreen = () => {
   const { internalLogin } = useLogin({
     clientId: "navtrack.web"
   });
-  const setAuth = useSetRecoilState(authenticationAtom);
 
   return (
     <SafeAreaView className="flex flex-grow bg-gray-900 px-6">
@@ -53,14 +50,9 @@ export const LogInScreen = () => {
       </View>
       <View>
         <NtTextButton
-          onPress={() => {
-            setAuth({
-              initialized: true,
-              isAuthenticated: true,
-              recheckToken: false
-            });
-            // internalLogin({ username: email, password: password });
-          }}>
+          onPress={() =>
+            internalLogin({ username: email, password: password })
+          }>
           <FormattedMessage id="generic.login" />
         </NtTextButton>
       </View>

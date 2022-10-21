@@ -9,7 +9,8 @@ export function MapZoom(props: IMapZoom) {
   const map = useMap();
 
   useEffect(() => {
-    if (props.zoom !== undefined) {
+    if (props.zoom !== undefined && map.map !== undefined) {
+      console.log("here");
       map.map.setZoom(props.zoom);
     }
   }, [map, props.zoom]);

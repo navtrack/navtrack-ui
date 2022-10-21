@@ -1,5 +1,5 @@
 import GeofenceCircle from "./GeofenceCircle";
-import Map from "../Map";
+import { Map } from "../Map";
 import { DEFAULT_MAP_CENTER } from "../../../../../constants";
 
 export default {

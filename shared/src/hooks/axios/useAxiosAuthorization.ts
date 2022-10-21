@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { AUTH_AXIOS_INSTANCE } from "../../api/authAxiosInstance";
-import { authenticationAtom } from "../../state/app.authentication";
+import { authenticationAtom } from "../../state/authentication";
 import { axiosAtom } from "../../state/app.axios";
 
 export const useAxiosAuthorization = () => {

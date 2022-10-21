@@ -1,5 +1,5 @@
 import { atom } from "recoil";
-import { Token } from "./app.authentication";
+import { Token } from "./authentication";
 
 export type LocalStorageState = {
   initialized: boolean;
