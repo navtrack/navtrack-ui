@@ -2,11 +2,11 @@ import * as React from "react";
 import { WebView } from "react-native-webview";
 
 type MapWebViewProps = {
-  ref: React.RefObject<WebView>;
-  setLoaded: () => void;
+  ref?: React.RefObject<WebView>;
+  setLoaded?: () => void;
 };
 
-export default function MapWebView(props: MapWebViewProps) {
+export const MapWebView = (props: MapWebViewProps) => {
   return (
     <WebView
       className="h-full"
@@ -15,4 +15,4 @@ export default function MapWebView(props: MapWebViewProps) {
       onMessage={props.setLoaded}
     />
   );
-}
+};

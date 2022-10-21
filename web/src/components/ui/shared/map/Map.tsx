@@ -1,6 +1,6 @@
 import styled from "@mui/styled-engine";
 import { ReactNode } from "react";
-import { MapContainer } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import { useRecoilValue } from "recoil";
 import { LatLng } from "./types";
 import VectorTileLayer from "react-leaflet-vector-tile-layer";
@@ -37,16 +37,17 @@ export default function Map(props: IMap) {
       {props.center !== undefined && (
         <MapContainer
           center={[props.center.latitude, props.center.longitude]}
-          zoom={props.zoom ?? 13}
+          zoom={props.zoom ?? 20}
           className="absolute top-0 left-0 h-full w-full rounded-lg"
           zoomControl={!props.hideZoomControl}
           attributionControl={!props.hideAttribution}>
-          <VectorTileLayer
+          {/* <VectorTileLayer
             styleUrl={settings["Map.TileUrl"]}
             attribution={
               '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org">OpenMapTiles</a>, &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
             }
-          />
+          /> */}
+          <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png" />
           {props.children}
         </MapContainer>
       )}

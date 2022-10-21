@@ -8,7 +8,7 @@ type ConfigProviderProps = {
 
 export const ConfigProvider = (props: ConfigProviderProps) => {
   const configInitialized = useSetConfig({
-    apiUrl: "http://localhost:3001"
+    apiUrl: "http://192.168.0.95:3001"
   });
   const interceptorInitialised = useAxiosBaseUrls();
 

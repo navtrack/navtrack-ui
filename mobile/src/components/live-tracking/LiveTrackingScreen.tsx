@@ -5,6 +5,7 @@ import { useMapWebView } from "../shared/maps/useMapWebView";
 import { Map } from "../shared/maps/Map";
 import { LiveTrackingDetails } from "./LiveTrackingDetails";
 import { LiveTrackingFollowButton } from "./LiveTrackingFollowButton";
+import { MapWebView } from "../shared/maps/MapWebView";
 
 export const LiveTrackingScreen = () => {
   const intl = useIntl();
@@ -32,7 +33,7 @@ export const LiveTrackingScreen = () => {
 
   return (
     <>
-      <Map />
+      <MapWebView />
       <LiveTrackingDetails />
       <LiveTrackingFollowButton />
     </>
