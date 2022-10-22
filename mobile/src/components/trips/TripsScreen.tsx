@@ -1,7 +1,5 @@
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
-import { AUTH_AXIOS_INSTANCE } from "@navtrack/ui-shared/api/authAxiosInstance";
 import { useCurrentAsset } from "@navtrack/ui-shared/newHooks/assets/useCurrentAsset";
-import { useAxiosRequestLogging } from "@navtrack/ui-shared/hooks/axios/useAxiosRequestLogging";
 import { useTripsQuery } from "@navtrack/ui-shared/hooks/queries/useTripsQuery";
 import { format } from "date-fns";
 import * as React from "react";
