@@ -3,28 +3,22 @@ import { AUTH_AXIOS_INSTANCE } from "@navtrack/ui-shared/api/authAxiosInstance";
 import { useCurrentAsset } from "@navtrack/ui-shared/newHooks/assets/useCurrentAsset";
 import { useAxiosRequestLogging } from "@navtrack/ui-shared/hooks/axios/useAxiosRequestLogging";
 import { useTripsQuery } from "@navtrack/ui-shared/hooks/queries/useTripsQuery";
-
 import { format } from "date-fns";
 import * as React from "react";
-import { useEffect } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { useRecoilState } from "recoil";
 import { TailwindColors } from "../../../tailwind";
 import { NtIcon } from "../shared/NtIcon";
-
 import { DateModal } from "./DateModal";
 import { showDateModal } from "./state";
+import { MapWebView } from "../shared/maps/MapWebView";
+import { TripUpdateEventPublisher } from "../shared/maps/TripUpdateEventPublisher";
 
 export default function TripsScreen() {
-  // const { webViewRef, publishEvent, mapLoaded, setMapLoaded } = useMapWebView();
   const [showModal, setShowModal] = useRecoilState(showDateModal);
-
   const currentAsset = useCurrentAsset();
-
   const [date, setDate] = React.useState(new Date());
   const [modalDate, setModalDate] = React.useState(new Date());
-
-  useAxiosRequestLogging(AUTH_AXIOS_INSTANCE);
 
   const trips = useTripsQuery({
     assetId: currentAsset?.id,
@@ -32,17 +26,11 @@ export default function TripsScreen() {
     endDate: format(modalDate, "yyyy-MM-dd")
   });
 
-  // useEffect(() => {
-  //   if (trips.data?.items?.length > 0) {
-  //     publishEvent<TripUpdateEvent>("TripUpdateEvent", {
-  //       trip: trips.data.items[0]
-  //     });
-  //   }
-  // }, [currentAsset, mapLoaded, publishEvent, trips.data?.items]);
-
   return (
     <>
-      {/* <MapWebView ref={webViewRef} setLoaded={setMapLoaded} /> */}
+      <MapWebView>
+        <TripUpdateEventPublisher trip={trips.data?.items[0]} />
+      </MapWebView>
       <View
         style={{
           backgroundColor: "rgba(17,24,39,.9)",
@@ -72,7 +60,7 @@ export default function TripsScreen() {
         }}
         className="absolute flex items-center rounded-md p-2">
         <Text className="text-base font-semibold text-white">
-          No trips found.
+          No trips found. {trips.data?.items[0]?.distance}
         </Text>
       </View>
       <DateModal

@@ -1,6 +1,6 @@
 import { useGetAssetsAssetIdTrips } from "../../api/index-generated";
 
-export type IUseTripsQuery = {
+export type UseTripsQueryProps = {
   assetId?: string;
   startDate?: string;
   endDate?: string;
@@ -15,7 +15,7 @@ export type IUseTripsQuery = {
   radius?: number;
 };
 
-export const useTripsQuery = (props: IUseTripsQuery) => {
+export const useTripsQuery = (props: UseTripsQueryProps) => {
   const query = useGetAssetsAssetIdTrips(
     props.assetId as string,
     {

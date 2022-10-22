@@ -4,11 +4,11 @@ import useMap from "./useMap";
 import MapPin from "./MapPin";
 import { TripModel } from "@navtrack/ui-shared/api/model/generated";
 
-interface IMapTrip {
+interface MapTripProps {
   trip?: TripModel;
 }
 
-export default function MapTrip(props: IMapTrip) {
+export const MapTrip = (props: MapTripProps) => {
   const map = useMap();
   const [polyline, setPolyline] = useState<Polyline | undefined>(undefined);
   const [polylineVisible, setPolylineVisible] = useState(false);
@@ -52,4 +52,4 @@ export default function MapTrip(props: IMapTrip) {
   }
 
   return null;
-}
+};

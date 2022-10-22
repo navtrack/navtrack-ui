@@ -1,6 +1,7 @@
 import { Map } from "../ui/shared/map/Map";
 import { DEFAULT_MAP_CENTER } from "../../constants";
 import { LocationPinUpdateEventHandler } from "./LocationPinUpdateEventHandler";
+import { TripUpdateEventHandler } from "./TripUpdateEventHandler";
 
 export function Maps() {
   return (
@@ -13,6 +14,7 @@ export function Maps() {
         hideZoomControl
         hideAttribution>
         <LocationPinUpdateEventHandler />
+        <TripUpdateEventHandler />
       </Map>
     </div>
   );
