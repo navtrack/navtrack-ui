@@ -13,12 +13,14 @@ import { DateModal } from "./DateModal";
 import { showDateModal } from "./state";
 import { MapWebView } from "../shared/maps/MapWebView";
 import { TripUpdateEventPublisher } from "../shared/maps/TripUpdateEventPublisher";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function TripsScreen() {
   const [showModal, setShowModal] = useRecoilState(showDateModal);
   const currentAsset = useCurrentAsset();
   const [date, setDate] = React.useState(new Date());
   const [modalDate, setModalDate] = React.useState(new Date());
+  const [tripIndex, setTripIndex] = React.useState(0);
 
   const trips = useTripsQuery({
     assetId: currentAsset?.id,
@@ -29,7 +31,7 @@ export default function TripsScreen() {
   return (
     <>
       <MapWebView>
-        <TripUpdateEventPublisher trip={trips.data?.items[0]} />
+        <TripUpdateEventPublisher trip={trips.data?.items[tripIndex]} />
       </MapWebView>
       <View
         style={{
@@ -59,9 +61,51 @@ export default function TripsScreen() {
           right: 8
         }}
         className="absolute flex items-center rounded-md p-2">
-        <Text className="text-base font-semibold text-white">
-          No trips found. {trips.data?.items[0]?.distance}
-        </Text>
+        {trips.data?.items.length === 0 ? (
+          <Text className="text-base font-semibold text-white">
+            No trips found. {trips.data?.items[0]?.distance}
+          </Text>
+        ) : (
+          <View className="flex w-full flex-row items-center justify-between">
+            <TouchableOpacity
+              className="flex flex-row"
+              onPressOut={() => {
+                if (tripIndex > 0) {
+                  setTripIndex(tripIndex - 1);
+                }
+              }}>
+              <View className="flex w-8 items-center justify-center">
+                <NtIcon
+                  size={20}
+                  icon={faArrowLeft}
+                  color={TailwindColors.white}
+                />
+              </View>
+            </TouchableOpacity>
+            <Text className="text-white">
+              Trip <Text className="font-bold">{tripIndex + 1}</Text> of{" "}
+              <Text className="font-bold">{trips.data?.items.length}</Text>.
+            </Text>
+            <TouchableOpacity
+              className="flex flex-row"
+              onPressOut={() => {
+                if (
+                  trips.data?.items.length &&
+                  tripIndex < trips.data?.items.length - 1
+                ) {
+                  setTripIndex(tripIndex + 1);
+                }
+              }}>
+              <View className="flex w-8 items-center justify-center">
+                <NtIcon
+                  size={20}
+                  icon={faArrowRight}
+                  color={TailwindColors.white}
+                />
+              </View>
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
       <DateModal
         showModal={showModal}
@@ -71,7 +115,7 @@ export default function TripsScreen() {
         }}
         onChange={(date) => setModalDate(date)}
         selectedDate={modalDate}
-        customTitle={trips?.data?.items?.length}
+        customTitle={<> {trips?.data?.items?.length} trips</>}
       />
     </>
   );

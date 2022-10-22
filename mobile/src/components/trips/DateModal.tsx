@@ -47,7 +47,7 @@ export function DateModal(props: Props) {
                 </Text>
               </TouchableOpacity>
             </View>
-            <SafeAreaView className="flex">
+            <View className="flex">
               <DateTimePicker
                 testID="dateTimePicker"
                 value={date}
@@ -62,7 +62,7 @@ export function DateModal(props: Props) {
                   }
                 }}
               />
-            </SafeAreaView>
+            </View>
           </View>
         </View>
       </View>
