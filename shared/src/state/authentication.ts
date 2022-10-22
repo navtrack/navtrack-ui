@@ -11,6 +11,7 @@ export type AuthenticationState = {
   token?: Token;
   initialized: boolean;
   recheckToken: boolean;
+  email?: string;
 };
 
 export const authenticationAtom = atom<AuthenticationState>({

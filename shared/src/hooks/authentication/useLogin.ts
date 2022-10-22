@@ -4,10 +4,10 @@ import { useSetRecoilState } from "recoil";
 import { add } from "date-fns";
 import { authenticationAtom } from "../../state/authentication";
 
-export interface ILoginValues {
+export type LoginValues = {
   username: string;
   password: string;
-}
+};
 
 interface UseLoginProps {
   clientId: string;
@@ -20,11 +20,12 @@ export const useLogin = (props: UseLoginProps) => {
   const [externalLoginError, setExternalLoginError] = useState(false);
 
   const getTokenMutation = useGetTokenMutation({
-    onSuccess: (data) => {
+    onSuccess: (data, variables) => {
       setState(() => ({
         recheckToken: false,
         initialized: true,
         isAuthenticated: true,
+        email: variables.username,
         token: {
           accessToken: data.access_token,
           refreshToken: data.refresh_token,
@@ -46,7 +47,7 @@ export const useLogin = (props: UseLoginProps) => {
   });
 
   const internalLogin = useCallback(
-    (values: ILoginValues) => {
+    (values: LoginValues) => {
       const data = {
         grant_type: "password",
         username: values.username,
