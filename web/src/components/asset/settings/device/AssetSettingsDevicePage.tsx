@@ -10,7 +10,7 @@ import DevicesTable from "./DevicesTable";
 import useNotification from "../../../ui/shared/notification/useNotification";
 import { object, SchemaOf, string } from "yup";
 import { DeviceTypeModel } from "@navtrack/ui-shared/api/model/generated";
-import { useCurrentAsset } from "@navtrack/ui-shared/hooks/assets/useCurrentAsset";
+import { useCurrentAsset } from "@navtrack/ui-shared/newHooks/assets/useCurrentAsset";
 import { useAddDeviceMutation } from "@navtrack/ui-shared/hooks/mutations/useAddDeviceMutation";
 import { useAssetDevicesQuery } from "@navtrack/ui-shared/hooks/queries/useAssetDevicesQuery";
 import { useDevicesTypesQuery } from "@navtrack/ui-shared/hooks/queries/useDevicesTypesQuery";

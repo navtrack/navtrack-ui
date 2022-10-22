@@ -1,5 +1,5 @@
 import { AssetUserModel } from "@navtrack/ui-shared/api/model/generated";
-import { useCurrentAsset } from "@navtrack/ui-shared/hooks/assets/useCurrentAsset";
+import { useCurrentAsset } from "@navtrack/ui-shared/newHooks/assets/useCurrentAsset";
 import { useDeleteUserFromAssetMutation } from "@navtrack/ui-shared/hooks/mutations/useDeleteUserFromAssetMutation";
 import { getError } from "@navtrack/ui-shared/utils/api";
 import { FormattedMessage } from "react-intl";

@@ -3,9 +3,9 @@ import { useMemo } from "react";
 import { Text, TouchableHighlight, View } from "react-native";
 import { useSetRecoilState } from "recoil";
 import { NtIcon } from "../shared/NtIcon";
-import { useAssets } from "@navtrack/ui-shared/hooks/assets/useAssets";
 import { currentAssetIdAtom } from "@navtrack/ui-shared/state/assets";
 import { TailwindColors } from "../../../tailwind";
+import { useGetAssets } from "@navtrack/ui-shared/newHooks/assets/useGetAssets";
 
 type AssetScrollListItemProps = {
   title: string;
@@ -16,7 +16,7 @@ type AssetScrollListItemProps = {
 };
 
 export function AssetScrollListItem(props: AssetScrollListItemProps) {
-  const assets = useAssets();
+  const assets = useGetAssets();
   const setCurrentAssetId = useSetRecoilState(currentAssetIdAtom);
 
   const border = useMemo(

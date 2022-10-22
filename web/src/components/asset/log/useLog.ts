@@ -1,4 +1,4 @@
-import { useCurrentAsset } from "@navtrack/ui-shared/hooks/assets/useCurrentAsset";
+import { useCurrentAsset } from "@navtrack/ui-shared/newHooks/assets/useCurrentAsset";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { locationFiltersSelector } from "../shared/location-filter/state";

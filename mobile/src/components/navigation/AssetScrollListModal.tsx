@@ -1,4 +1,4 @@
-import { useAssets } from "@navtrack/ui-shared/hooks/assets/useAssets";
+import { useGetAssets } from "@navtrack/ui-shared/newHooks/assets/useGetAssets";
 import { FormattedMessage } from "react-intl";
 import {
   Modal,
@@ -13,7 +13,7 @@ import { showAssetsSelectListModalAtom } from "../assets/state";
 import { AssetScrollListItem } from "./AssetScrollListItem";
 
 export const AssetScrollListModal = () => {
-  const assets = useAssets();
+  const assets = useGetAssets();
   const [showModal, setShowModal] = useRecoilState(
     showAssetsSelectListModalAtom
   );

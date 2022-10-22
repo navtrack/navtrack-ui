@@ -83,6 +83,7 @@ export const SettingsScreen = () => {
     </View>
   );
 };
+
 function Item(props: { children: ReactNode; style?: StyleProp<ViewStyle> }) {
   return (
     <View

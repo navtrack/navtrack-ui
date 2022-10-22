@@ -3,7 +3,7 @@ import { useIntl } from "react-intl";
 import { object, SchemaOf, string } from "yup";
 import { RenameAssetFormValues } from "./types";
 import { FormikHelpers } from "formik";
-import { useCurrentAsset } from "@navtrack/ui-shared/hooks/assets/useCurrentAsset";
+import { useCurrentAsset } from "@navtrack/ui-shared/newHooks/assets/useCurrentAsset";
 import { useRenameAssetMutation } from "@navtrack/ui-shared/hooks/mutations/useRenameAssetMutation";
 import { useGetAssetsSignalRQuery } from "@navtrack/ui-shared/hooks/queries/useGetAssetsSignalRQuery";
 import { mapErrors } from "@navtrack/ui-shared/utils/formik";

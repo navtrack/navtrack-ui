@@ -1,4 +1,4 @@
-import { useCurrentAsset } from "@navtrack/ui-shared/hooks/assets/useCurrentAsset";
+import { useCurrentAsset } from "@navtrack/ui-shared/newHooks/assets/useCurrentAsset";
 import { useEffect } from "react";
 import { useMapEvents } from "react-leaflet";
 import { useRecoilState } from "recoil";

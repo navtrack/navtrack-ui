@@ -4,22 +4,23 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { NtIcon } from "../shared/NtIcon";
 import { showAssetsSelectListModalAtom } from "./state";
 import { useSetRecoilState } from "recoil";
-import { useCurrentAsset } from "@navtrack/ui-shared/hooks/assets/useCurrentAsset";
+import { useCurrentAsset } from "@navtrack/ui-shared/newHooks/assets/useCurrentAsset";
 import { TailwindColors } from "../../../tailwind";
+import { useGetAssets } from "@navtrack/ui-shared/newHooks/assets/useGetAssets";
 
 export const AssetHeaderTitle = () => {
   const setShowAssetsSelectListModalAtom = useSetRecoilState(
     showAssetsSelectListModalAtom
   );
-
   const currentAsset = useCurrentAsset();
+  const assets = useGetAssets();
 
   return (
     <View className="flex flex-row items-center justify-center">
       {currentAsset ? (
         <>
           <NtIcon
-            // className="mr-2"
+            customClassName="mr-2"
             size={12}
             icon={faCircle}
             color={
@@ -43,13 +44,19 @@ export const AssetHeaderTitle = () => {
               {currentAsset?.name}
             </Text>
             <NtIcon
-              // className="ml-2"
+              customClassName="ml-2"
               size={14}
               icon={faChevronDown}
               color="white"
             />
           </TouchableOpacity>
         </>
+      ) : assets.length === 0 ? (
+        <View className="flex items-center">
+          <Text className="text-base text-white">
+            <FormattedMessage id="assets.header.no-items" />
+          </Text>
+        </View>
       ) : (
         <View className="flex items-center">
           <Text className="text-base text-white">

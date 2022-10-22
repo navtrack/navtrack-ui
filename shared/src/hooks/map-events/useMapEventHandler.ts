@@ -1,12 +1,12 @@
 import { useCallback, useEffect } from "react";
-import { WebViewMapEvents } from "./types";
+import { MapEvents } from "./events";
 
 interface IUseWebViewEventHandler<T> {
-  eventName: keyof typeof WebViewMapEvents;
+  eventName: MapEvents;
   handler: (payload: T) => void;
 }
 
-export function useWebViewEventHandler<T>(props: IUseWebViewEventHandler<T>) {
+export function useMapEventHandler<T>(props: IUseWebViewEventHandler<T>) {
   const handleEvent = useCallback(
     (event: Event) => {
       const custom = event as CustomEvent<T>;
@@ -16,10 +16,13 @@ export function useWebViewEventHandler<T>(props: IUseWebViewEventHandler<T>) {
   );
 
   useEffect(() => {
-    window.addEventListener(props.eventName, handleEvent);
+    window.addEventListener(props.eventName as unknown as string, handleEvent);
 
     return () => {
-      window.removeEventListener(props.eventName, handleEvent);
+      window.removeEventListener(
+        props.eventName as unknown as string,
+        handleEvent
+      );
     };
   });
 }

@@ -1,4 +1,4 @@
-import { useCurrentAsset } from "@navtrack/ui-shared/hooks/assets/useCurrentAsset";
+import { useCurrentAsset } from "@navtrack/ui-shared/newHooks/assets/useCurrentAsset";
 import { useDateTime } from "@navtrack/ui-shared/hooks/util/useDateTime";
 import { useDistance } from "@navtrack/ui-shared/hooks/util/useDistance";
 import React from "react";

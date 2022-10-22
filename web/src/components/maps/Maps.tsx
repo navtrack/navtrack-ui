@@ -1,30 +1,8 @@
 import { Map } from "../ui/shared/map/Map";
-import MapPin from "../ui/shared/map/MapPin";
-import { useEffect, useMemo, useState } from "react";
 import { DEFAULT_MAP_CENTER } from "../../constants";
-import { LocationPinUpdateEvent } from "@navtrack/ui-shared/hooks/webView/types";
-import { useWebViewEventHandler } from "@navtrack/ui-shared/hooks/webView/useWebViewEventHandler";
+import { LocationPinUpdateEventHandler } from "./LocationPinUpdateEventHandler";
 
 export function Maps() {
-  const [event, setEvent] = useState<LocationPinUpdateEvent>();
-
-  // useWebViewEventHandler<LocationPinUpdateEvent>({
-  //   eventName: "LocationPinUpdateEvent",
-  //   handler: (e: LocationPinUpdateEvent) => {
-  //     setEvent(e);
-  //   }
-  // });
-
-  // useEffect(() => {
-  //   if (typeof window !== "undefined" && "ReactNativeWebView" in window) {
-  //     const reactNativeWebView = (window as any).ReactNativeWebView;
-
-  //     reactNativeWebView.postMessage("loaded");
-  //   }
-  // }, []);
-
-  const zoom = useMemo(() => (event !== undefined ? 13 : 2), [event]);
-
   return (
     <div className="flex min-h-screen">
       <Map
@@ -32,15 +10,9 @@ export function Maps() {
           latitude: DEFAULT_MAP_CENTER.latitude,
           longitude: DEFAULT_MAP_CENTER.longitude
         }}
-        zoom={zoom}
         hideZoomControl
         hideAttribution>
-        <MapPin
-          latitude={event?.latitude}
-          longitude={event?.longitude}
-          zoom={event?.resetZoom ? 16 : undefined}
-          follow={event?.follow}
-        />
+        <LocationPinUpdateEventHandler />
       </Map>
     </div>
   );
