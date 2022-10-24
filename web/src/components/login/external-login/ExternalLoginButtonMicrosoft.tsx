@@ -4,7 +4,6 @@ import { FormattedMessage } from "react-intl";
 import { useMsal } from "@azure/msal-react";
 import { useCallback } from "react";
 import { useRecoilValue } from "recoil";
-
 import { ICustomExternalLoginButton } from "./types";
 import { settingsSelector } from "@navtrack/ui-shared/state/app.settings";
 

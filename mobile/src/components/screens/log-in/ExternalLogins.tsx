@@ -1,11 +1,10 @@
-import {
-  faApple,
-  faGoogle,
-  faMicrosoft
-} from "@fortawesome/free-brands-svg-icons";
+import { faGoogle, faMicrosoft } from "@fortawesome/free-brands-svg-icons";
+import React from "react";
 import { FormattedMessage } from "react-intl";
 import { Text, View } from "react-native";
-import ExternalLoginButton from "./ExternalLoginButton";
+import { AppleLoginButton } from "./AppleLoginButton";
+import { ExternalLoginButton } from "./ExternalLoginButton";
+import { MicrosoftLoginButton } from "./MicrosoftLoginButton";
 
 export default function ExternalLogins() {
   return (
@@ -18,9 +17,9 @@ export default function ExternalLogins() {
         <View className="h-px flex-1 bg-gray-400"></View>
       </View>
       <View className="mt-4 flex flex-row space-x-2">
-        <ExternalLoginButton icon={faApple} />
+        <AppleLoginButton />
         <View className="p-1" />
-        <ExternalLoginButton icon={faMicrosoft} />
+        <MicrosoftLoginButton />
         <View className="p-1" />
         <ExternalLoginButton icon={faGoogle} />
       </View>
