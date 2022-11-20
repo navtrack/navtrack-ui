@@ -16,11 +16,11 @@ export const useCurrentAsset = () => {
     return undefined;
   }, [assets, currentAssetId]);
 
-  useEffect(() => {
-    if (!currentAssetId && assets.length > 0) {
-      setCurrentAssetId(assets[0].shortId);
-    }
-  }, [assets, currentAssetId, setCurrentAssetId]);
+  // useEffect(() => {
+  //   if (!currentAssetId && assets.length > 0) {
+  //     setCurrentAssetId(assets[0].shortId);
+  //   }
+  // }, [assets, currentAssetId, setCurrentAssetId]);
 
   return currentAsset;
 };
